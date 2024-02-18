@@ -1,0 +1,33 @@
+@import "reset";
+@import "variables/global.scss";
+@import "themes/light.scss";
+@import "themes/dark.scss";
+
+.app {
+  font: var(--font-m);
+  font-size: 28px;
+
+  background: var(--bg-color);
+  color: var(--primary-color);
+
+  min-height: 100vh;
+}
+
+a {
+  color: var(--primary-color);
+}
+
+.btn-theme {
+  padding: 10px 20px;
+  text-transform: uppercase;
+  transition: 0.3s ease-in-out;
+  outline: 1px solid var(--secondary-color);
+  background: var(--bg-color);
+  border: none;
+  &:hover {
+    // color: var(--secondary-color);
+    cursor: pointer;
+    outline: 1px solid var(--secondary-color);
+    border: none;
+  }
+}
