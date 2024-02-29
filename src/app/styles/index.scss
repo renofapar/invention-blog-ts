@@ -1,0 +1,30 @@
+@import "reset";
+@import "variables/global.scss";
+@import "themes/light.scss";
+@import "themes/dark.scss";
+
+.app {
+  font: var(--font-m);
+  font-size: 28px;
+
+  background: var(--bg-color);
+  color: var(--primary-color);
+
+  min-height: 100vh;
+  
+}
+
+
+
+a {
+  color: var(--primary-color);
+}
+
+.content-page {
+  display: flex;
+}
+
+.page-wrap {
+  flex-grow: 1;
+  padding: 15px;
+}

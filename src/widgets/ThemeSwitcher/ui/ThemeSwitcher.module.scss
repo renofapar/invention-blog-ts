@@ -1,0 +1,19 @@
+.btnTheme {
+  padding: 10px 20px;
+  text-transform: uppercase;
+  transition: 0.3s ease-in-out;
+  outline: 1px solid var(--secondary-color);
+  background: var(--bg-color);
+  border: none;
+  display: flex;
+  align-items:center;
+  justify-content: space-around;
+  color: var(--primary-color);
+  &:hover {
+    cursor: pointer;
+    border: none;
+  }
+  svg {
+    fill: var(--primary-color);
+  }
+}

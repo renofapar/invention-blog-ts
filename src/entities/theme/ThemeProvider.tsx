@@ -1,5 +1,6 @@
 import React, { FC } from 'react'
-import { Theme, ThemeContext, LOCAL_STORAGE_THEME_KEY } from './ThemeContext'
+import { ThemeContext, LOCAL_STORAGE_THEME_KEY } from './model/ThemeContext'
+import { Theme } from './model/types';
 
 const defaultTheme = localStorage.getItem(LOCAL_STORAGE_THEME_KEY) as Theme || Theme.light;
 const ThemeProvider: FC<{children: React.ReactNode}> = ({children}) => {

@@ -1,0 +1,28 @@
+.navbar {
+  width: 100%;
+  height: var(--navbar-height);
+  padding: 20px;
+  background: var(--inverted-bg-color);
+  display: flex;
+  align-items: center;
+}
+
+.links {
+
+}
+
+.link {
+  padding: 10px 20px;
+  font-size: 18px;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: 0.1s ease-in-out;
+  outline: 2px solid transparent;
+  &:hover {
+    color: var(--primary-color);
+    outline: 2px solid var(--secondary-color);
+  }
+  &.active {
+    border: 1px solid var(--primary-color);
+  }
+}

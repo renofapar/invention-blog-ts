@@ -1,5 +1,7 @@
 import React from "react";
-import { LOCAL_STORAGE_THEME_KEY, Theme, ThemeContext } from "./ThemeContext";
+import { LOCAL_STORAGE_THEME_KEY, ThemeContext } from "./model/ThemeContext";
+import { Theme } from "./model/types";
+
 
 
 interface useThemeInterface {
