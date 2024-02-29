@@ -1,15 +1,14 @@
 import React from 'react'
 import styles from './Sidebar.module.scss'
-import classNames from 'classnames';
-import { ThemeSwitcher } from '@/widgets/ThemeSwitcher';
+import classNames from 'classnames'
+import { ThemeSwitcher } from '@/widgets/ThemeSwitcher'
 
 interface ISidebar {
-  className?: string;
+  className?: string
 
 }
 
-
-export const Sidebar:React.FC<ISidebar> = ({className}) => {
+export const Sidebar: React.FC<ISidebar> = ({ className }) => {
   const [collapsed, setCollapsed] = React.useState(false)
   const styled = classNames(styles.sidebar, className, {
     [styles.collapsed]: collapsed
@@ -18,13 +17,12 @@ export const Sidebar:React.FC<ISidebar> = ({className}) => {
     setCollapsed(collapsed => !collapsed)
   }
   return (
-    <div className={styled}>
-      <button onClick={onToggle}>toggle</button>
-      <div className={styles.switchers}>
-      <ThemeSwitcher />
-      {/* <langSwitcher />*/ }
+      <div className={styled}>
+          <button onClick={onToggle}>toggle</button>
+          <div className={styles.switchers}>
+              <ThemeSwitcher />
+              {/* <langSwitcher /> */ }
+          </div>
       </div>
-    </div>
   )
 }
-

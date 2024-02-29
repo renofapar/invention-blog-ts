@@ -7,7 +7,9 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build:prod": "webpack --env mode=production",
     "build:dev": "webpack --env mode=development",
-    "serve": "webpack serve --env port=3000"
+    "serve": "webpack serve --env port=3000",
+    "list:ts:fix": "eslint \"**/*.{ts,tsx}\" --fix",
+    "list:ts": "eslint \"**/*.{ts,tsx}\""
   },
   "keywords": [],
   "author": "",

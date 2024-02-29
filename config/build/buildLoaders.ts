@@ -1,17 +1,16 @@
-import MiniCssExtractPlugin from "mini-css-extract-plugin";
-import webpack from "webpack";
-import { BuildOptions } from "./types/config";
+import MiniCssExtractPlugin from 'mini-css-extract-plugin'
+import type webpack from 'webpack'
+import { type BuildOptions } from './types/config'
 
-export function buildLoader({isDev}: BuildOptions):webpack.RuleSetRule[] {
-
+export function buildLoader ({ isDev }: BuildOptions): webpack.RuleSetRule[] {
   const babelLoader = {
     test: /\.(js|jsx|ts|tsx)$/,
     exclude: /node_modules/,
     use: {
-      loader: "babel-loader",
+      loader: 'babel-loader',
       options: {
         presets: ['@babel/preset-env']
-      } 
+      }
     }
   }
 
@@ -19,7 +18,7 @@ export function buildLoader({isDev}: BuildOptions):webpack.RuleSetRule[] {
     test: /\.(png|jpe?g|gif|woff2|woff)$/i,
     use: [
       {
-        loader: 'file-loader',
+        loader: 'file-loader'
 
       }
     ]
@@ -33,27 +32,27 @@ export function buildLoader({isDev}: BuildOptions):webpack.RuleSetRule[] {
   const typescriptLoader = {
     test: /\.tsx?$/,
     use: 'ts-loader',
-    exclude: /node_modules/,
+    exclude: /node_modules/
   }
 
   const scssLoader = {
     test: /\.s[ac]ss$/i,
     use: [
-        isDev ? 'style-loader' : MiniCssExtractPlugin.loader,
-       {
-         loader: 'css-loader',
-         options: {
-           modules: {
+      isDev ? 'style-loader' : MiniCssExtractPlugin.loader,
+      {
+        loader: 'css-loader',
+        options: {
+          modules: {
             auto: (responsePath: string) => Boolean(responsePath.includes('.module.')),
-           localIdentName: isDev ? '[path][name]__[local]--[hash:base64:5]' : '[hash:base64:8]'
-           },
-           
-         }
-       }, 
-       'sass-loader'
-      ],
+            localIdentName: isDev ? '[path][name]__[local]--[hash:base64:5]' : '[hash:base64:8]'
+          }
+
+        }
+      },
+      'sass-loader'
+    ]
   }
-  
+
   return [
     babelLoader,
     fileLoader,

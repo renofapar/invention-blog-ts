@@ -1,12 +1,12 @@
-import path from "path"
-import { buildPlugin } from "./buildPlugin"
-import { buildLoader } from "./buildLoaders"
-import { buildResolves } from "./buildResolves"
-import webpack from "webpack"
-import { BuildOptions } from "./types/config"
-import { buildWebpackServer } from "./buildWebpackServer"
+import { buildPlugin } from './buildPlugin'
+import { buildLoader } from './buildLoaders'
+import { buildResolves } from './buildResolves'
+import type webpack from 'webpack'
+import { type BuildOptions } from './types/config'
+import { buildWebpackServer } from './buildWebpackServer'
 
-export function buildWebpackConfig(options: BuildOptions): webpack.Configuration {
+export function buildWebpackConfig (options: BuildOptions): webpack.Configuration {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const { mode, paths, port, isDev } = options
   return {
     mode,
@@ -23,7 +23,7 @@ export function buildWebpackConfig(options: BuildOptions): webpack.Configuration
       rules: buildLoader(options)
     },
     devServer: isDev ? buildWebpackServer(options) : undefined,
-    devtool: isDev ? 'inline-source-map' : undefined,
-    
+    devtool: isDev ? 'inline-source-map' : undefined
+
   }
 }

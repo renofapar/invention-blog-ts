@@ -1,4 +1,3 @@
-
 export const someFn = () => {
-  console.log('someFn');
+  console.log('someFn')
 }

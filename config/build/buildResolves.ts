@@ -1,12 +1,11 @@
-import path from "path";
-import webpack from "webpack";
-import { BuildOptions } from "./types/config";
+import type webpack from 'webpack'
+import { type BuildOptions } from './types/config'
 
-export function buildResolves({paths}: BuildOptions): webpack.ResolveOptions {
+export function buildResolves ({ paths }: BuildOptions): webpack.ResolveOptions {
   return {
     alias: {
-      '@': paths.src,
+      '@': paths.src
     },
-    extensions: ['.tsx', '.ts', '.js', '.jsx'],
+    extensions: ['.tsx', '.ts', '.js', '.jsx']
   }
 }
